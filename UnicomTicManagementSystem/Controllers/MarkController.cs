@@ -87,6 +87,14 @@ namespace UnicomTicManagementSystem.Controller.cs
             using (var conn = DBConfig.GetConnection())
             {
                 string query = "DELETE Mark";
+                {
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                    
+                        {cmd.Parameters.AddWithValue("@id", course.Id);
+                        await cmd.ExecuteNonQueryAsync();
+                    }
+                }
+
             }
             
         }
