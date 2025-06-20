@@ -15,11 +15,11 @@ namespace UnicomTicManagementSystem.Views
     public partial class CourseForm : Form
     {
         private CourseController courseController = new CourseController();
-        private int Clicked_Id = -1;
+        private int course_Id = -1;
         public CourseForm()
         {
             InitializeComponent();
-            this.Load += CourseForm_Load();
+            this.Load += CourseForm_Load;
         }
 
         private async void Course_DGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -27,23 +27,24 @@ namespace UnicomTicManagementSystem.Views
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = Course_DGV.Rows[e.RowIndex];
-                Clicked_Id = Convert.ToInt32(row.Cells["Course_Id"].Value);
+                course_Id = Convert.ToInt32(row.Cells["Course_Id"].Value);
                 txt_Course.Text = row.Cells["CourseName"].Value.ToString();
+                await LoadCourses();
             }
         }
 
         private async void btn_Update_Click(object sender, EventArgs e)
         {
-            if (Clicked_Id != -1)
+            if (course_Id != -1)
             {
                 courseController.UpdateAsync(new Course
                 {
-                    Id = Clicked_Id,
+                    Id = course_Id,
                     CourseName = txt_Course.Text.Trim(),
                 });
 
                 txt_Course.Clear();
-                Clicked_Id = -1;
+                course_Id = -1;
                 await LoadCourses();
             }
         }
@@ -74,13 +75,16 @@ namespace UnicomTicManagementSystem.Views
 
         }
 
-        private void btn_Delete_Click(object sender, EventArgs e)
+        private async void btn_Delete_Click(object sender, EventArgs e)
         {
-            if (Clicked_Id != -1)
+            if (course_Id != -1)
             {
-                courseController.DeleteAsync(Clicked_Id);
+                
+                courseController.DeleteAsync(course_Id );
                 txt_Course.Clear();
-                Clicked_Id = -1;
+                course_Id = -1;
+                
+                
                 await LoadCourses();
             }
         }
@@ -97,10 +101,15 @@ namespace UnicomTicManagementSystem.Views
 
         private async Task LoadCourses()
         {
-            Course_DGV.DataSource = await CourseController.GetAllCourseAsync();
+            Course_DGV.DataSource = await courseController.GetAllCourseAsync();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CourseForm_Load_1(object sender, EventArgs e)
         {
 
         }

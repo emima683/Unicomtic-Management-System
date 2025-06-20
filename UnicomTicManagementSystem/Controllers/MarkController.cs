@@ -82,7 +82,7 @@ namespace UnicomTicManagementSystem.Controller.cs
         }
 
 
-        public async Task DeleteAsync(Mark mark)
+        public async Task DeleteAsync(int markid)
         {
             using (var conn = DBConfig.GetConnection())
             {
@@ -90,7 +90,7 @@ namespace UnicomTicManagementSystem.Controller.cs
                 {
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     
-                        {cmd.Parameters.AddWithValue("@id", course.Id);
+                        {cmd.Parameters.AddWithValue("@id", markid);
                         await cmd.ExecuteNonQueryAsync();
                     }
                 }

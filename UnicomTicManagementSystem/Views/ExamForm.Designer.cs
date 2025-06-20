@@ -43,7 +43,7 @@
             // lbl_ExamName
             // 
             this.lbl_ExamName.AutoSize = true;
-            this.lbl_ExamName.Location = new System.Drawing.Point(291, 50);
+            this.lbl_ExamName.Location = new System.Drawing.Point(252, 50);
             this.lbl_ExamName.Name = "lbl_ExamName";
             this.lbl_ExamName.Size = new System.Drawing.Size(64, 13);
             this.lbl_ExamName.TabIndex = 0;
@@ -52,7 +52,7 @@
             // lbl_Subject
             // 
             this.lbl_Subject.AutoSize = true;
-            this.lbl_Subject.Location = new System.Drawing.Point(293, 91);
+            this.lbl_Subject.Location = new System.Drawing.Point(252, 91);
             this.lbl_Subject.Name = "lbl_Subject";
             this.lbl_Subject.Size = new System.Drawing.Size(48, 13);
             this.lbl_Subject.TabIndex = 1;
@@ -75,7 +75,7 @@
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(296, 136);
+            this.btn_Add.Location = new System.Drawing.Point(269, 136);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 23);
             this.btn_Add.TabIndex = 5;
@@ -85,7 +85,7 @@
             // 
             // btn_Update
             // 
-            this.btn_Update.Location = new System.Drawing.Point(418, 136);
+            this.btn_Update.Location = new System.Drawing.Point(382, 136);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(75, 23);
             this.btn_Update.TabIndex = 6;
@@ -95,7 +95,7 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(535, 136);
+            this.btn_Delete.Location = new System.Drawing.Point(485, 136);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(75, 23);
             this.btn_Delete.TabIndex = 7;
@@ -106,9 +106,9 @@
             // Exam_DGV
             // 
             this.Exam_DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Exam_DGV.Location = new System.Drawing.Point(42, 175);
+            this.Exam_DGV.Location = new System.Drawing.Point(115, 175);
             this.Exam_DGV.Name = "Exam_DGV";
-            this.Exam_DGV.Size = new System.Drawing.Size(679, 263);
+            this.Exam_DGV.Size = new System.Drawing.Size(562, 263);
             this.Exam_DGV.TabIndex = 8;
             this.Exam_DGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Exam_DGV_CellContentClick);
             // 
@@ -135,6 +135,7 @@
             this.Controls.Add(this.txtE_Name);
             this.Controls.Add(this.lbl_Subject);
             this.Controls.Add(this.lbl_ExamName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ExamForm";
             this.Text = "ExamForm";
             this.Load += new System.EventHandler(this.ExamForm_Load_1);

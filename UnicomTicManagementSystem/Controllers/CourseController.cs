@@ -81,7 +81,7 @@ namespace UnicomTicManagementSystem.Controllers
         }
 
 
-        public async void DeleteAsync (Course course)
+        public async void DeleteAsync (int id)
         {
             using (var conn = DBConfig.GetConnection())
             {
@@ -89,7 +89,7 @@ namespace UnicomTicManagementSystem.Controllers
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@id", course.Id);
+                    cmd.Parameters.AddWithValue("@id", id);
                     await cmd.ExecuteNonQueryAsync();
                 }
 

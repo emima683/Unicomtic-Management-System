@@ -16,7 +16,7 @@ namespace UnicomTicManagementSystem.Views
     public partial class StudentForm : Form
     {
        private StudentController studentController = new StudentController();
-        private int stu_id = -1;
+       private int stu_id = -1;
         public StudentForm()
         {
             InitializeComponent();
@@ -52,13 +52,14 @@ namespace UnicomTicManagementSystem.Views
                 MessageBox.Show("please Enter the First_Name, Last_Name, Address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Student newstudent = new Student();
-            newstudent.First_Name = textBox3.Text;
-            newstudent.Last_Name = textBox1.Text;
-            newstudent.Address = textBox2.Text;
-            newstudent.Stream = comboBox1.Text;
-
-            StudentController studentController = new StudentController(newstudent);
+            Student student = new Student
+            {
+                First_Name = textBox3.Text,
+                Last_Name = textBox1.Text,
+               Address = textBox2.Text,
+               Stream = comboBox1.Text,
+            };
+            StudentController studentController = new StudentController(student);
 
             get_student_info();
             

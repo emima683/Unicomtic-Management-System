@@ -156,8 +156,10 @@
             this.Controls.Add(this.lbl_End);
             this.Controls.Add(this.lbl_Start);
             this.Controls.Add(this.lbl_CourseName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CourseForm";
             this.Text = "CourseForm";
+            this.Load += new System.EventHandler(this.CourseForm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.Course_DGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -18,6 +18,7 @@ namespace UnicomTicManagementSystem.Controllers
 
             using (var conn = DBConfig.GetConnection())
             {
+              
                 string query = @"SELECT * FROM Exam;";
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
@@ -30,7 +31,7 @@ namespace UnicomTicManagementSystem.Controllers
                             {
                                 ExamId = reader.GetInt32(0),
                                 ExamName = reader.GetString(1),
-                                SubjectId =reader.GetInt32(2)
+                                SubjectId = reader.GetInt32(2)
                             });
                         }
                     }
@@ -40,53 +41,52 @@ namespace UnicomTicManagementSystem.Controllers
             return exam;
         }
 
-        public async Task Add(Exam exam)
-            {
+        public void AddExam (Exam exam)
+        {
             using (var conn = DBConfig.GetConnection())
             {
+          
                 string query = "INSERT INTO Exam (ExamName, SubjectId) VALUES (@name, @subjectId);";
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue(" @name", exam.ExamName);
+                    cmd.Parameters.AddWithValue("@name", exam.ExamName);
                     cmd.Parameters.AddWithValue("@subjectId", exam.SubjectId);
-                    await cmd.ExecuteNonQueryAsync();
-
-
+                    cmd.ExecuteNonQuery();
                 }
             }
-
         }
 
-
-        public  async Task UpdateAsync(Exam exam)
+        public void UpdateExam(Exam exam)
         {
             using (var conn = DBConfig.GetConnection())
             {
-                string query = "UPDATE WXAM SET (ExamName = @name, SubjectId = @subjectId WHERE ExamId = @id;";
+              
+                string query = "UPDATE Exam SET ExamName = @name, SubjectId = @subjectId WHERE ExamId = @id;";
+
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue(" @name", exam.ExamName);
+                    cmd.Parameters.AddWithValue("@name", exam.ExamName);
                     cmd.Parameters.AddWithValue("@subjectId", exam.SubjectId);
-                    await cmd.ExecuteNonQueryAsync();
+                    cmd.Parameters.AddWithValue("@id", exam.ExamId);
+                     cmd.ExecuteNonQuery();
                 }
             }
         }
 
-       public async Task DeleteAsync(int examid)
-
+        public void DeleteExam(int examid)
         {
-            string query = "DELETE FROM Exam WHERE ExamId=@id;";
-
-            using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
-
+            using (var conn = DBConfig.GetConnection())
             {
-                cmd.Parameters.AddWithValue("@id", examid);
-                await cmd.ExecuteNonQueryAsync();
 
+                string query = "DELETE FROM Exam WHERE ExamId = @id;";
 
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", examid);
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
-
     }
 }

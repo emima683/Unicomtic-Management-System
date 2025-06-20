@@ -23,7 +23,7 @@ namespace UnicomTicManagementSystem.Controllers
                                 "INSERT INTO USER (username, password, role) VALUE ('Staff', 'staff', 'Staff@123')," +
                                 "INSERT INTO USER (username, password, role) VALUE ('Student', 'student', 'Student@123');";
 
-                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                using (SQLiteCommand cmd = conn.CreateCommand())
                 {
                     cmd.Parameters.AddWithValue("@UserName", user.UserName);
                     cmd.Parameters.AddWithValue("@Password", user.Password);
@@ -33,8 +33,7 @@ namespace UnicomTicManagementSystem.Controllers
                 }
             }
         }
+    }   
         
-        
-        
-    }
 }
+

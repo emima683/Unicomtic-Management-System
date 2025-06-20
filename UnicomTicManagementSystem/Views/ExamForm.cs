@@ -16,106 +16,124 @@ namespace UnicomTicManagementSystem.Views
     public partial class ExamForm : Form
     {
         private ExamController examController = new ExamController();
-        private SubjectController subjectController = new SubjectController();
-        private int Clicked_ExamId = -1;
-
+        
+        private int Exam_id = -1;
 
         public ExamForm()
         {
             InitializeComponent();
-            this.Load += ExamForm_Load;
+      
+            Exam_DGV.CellClick += Exam_DGV_CellClick;  // Use CellClick instead of CellContentClick
+        }
+
+        private  void ExamForm_Load(object sender, EventArgs e)
+        {
+          
             
         }
 
-        private async void ExamForm_Load(object sender, EventArgs e)
+        private void LoadExam()
         {
-            await LoadExams();
-            await LoadSubjects();
+            var exam = examController.GetAllExam();
+            comboBox_Subject.DataSource = null;
+            comboBox_Subject.DisplayMember = "SubjectName";
+            comboBox_Subject.ValueMember = "SubjectId";
+            comboBox_Subject.SelectedIndex = -1;
         }
 
-        private async Task LoadSubjects()
+        private void LoadExams()
         {
-            var subjects = await subjectController.GetAllSubjectsAsync();
-            cmb_sub.DataSource = subjects;
-            cmb_sub.DisplayMember = "SubjectName";
-            cmb_sub.ValueMember = "SubjectId";
-
+          this.Close();
         }
 
-
-        private async Task LoadExams()
-        {
-            Exam_DGV.DataSource = await examController.GetAllExamAsync();
-        }
-
-        private void ExamForm_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void btn_Add_Click(object sender, EventArgs e)
+        private void btn_Add_Click(object sender, EventArgs e)
         {
             string examName = txtE_Name.Text.Trim();
-            int subjectId = Convert.ToInt32(cmb_sub.SelectedValue);
 
-            if(!string.IsNullOrWhiteSpace(examName))
+            if (string.IsNullOrWhiteSpace(examName) || comboBox_Subject.SelectedValue == null)
             {
-                await examController.AddAsync (new Exam
-                    {
-                        ExamName = examName,
-                        SubjectId = subjectId
-                    });
-                txtE_Name.Clear();
-                await LoadExams();
-
-                MessageBox.Show("Exam Addeda Succesfully");
+                MessageBox.Show("Please enter exam name and select a subject.");
+                return;
             }
 
-            else
+            int Exam_id = Convert.ToInt32(comboBox_Subject.SelectedValue);
+
+            try
             {
-                MessageBox.Show("Please enter exam name");
+                 examController.AddExam(new Exam
+                {
+                    ExamName = examName,
+                    SubjectId = Exam_id
+                 });
+
+                txtE_Name.Clear();
+                LoadExams();
+                MessageBox.Show("Exam Added Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding exam: {ex.Message}");
             }
         }
 
-        private async void btn_Update_Click(object sender, EventArgs e)
+        private void btn_Update_Click(object sender, EventArgs e)
         {
-            if (Clicked_ExamId != -1)
+            if (Exam_id == -1)
             {
-                await examController.UpdateAsync(new Exam
-                {
-                    ExamId = Clicked_ExamId,
-                    ExamName = txtE_Name.Text.Trim(),
-                    SubjectId = Convert.ToInt32(cmb_sub.SelectedValue)
+                MessageBox.Show("Please select an exam to update.");
+                return;
+            }
 
+            try
+            {
+                 examController.UpdateExam(new Exam
+                {
+                    ExamId = Exam_id,
+                    ExamName = txtE_Name.Text.Trim(),
+                    SubjectId = Convert.ToInt32(comboBox_Subject.SelectedValue)
                 });
 
-                txtE_Name.Clear();
-                Clicked_ExamId = -1;
-                await LoadExams();
+                ClearForm();
+                LoadExams();
+                MessageBox.Show("Exam Updated Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating exam: {ex.Message}");
             }
         }
 
-        private async void btn_Delete_Click(object sender, EventArgs e)
+        private  void btn_Delete_Click(object sender, EventArgs e)
         {
-            if (Clicked_ExamId != -1)
+            if (Exam_id == -1)
             {
-                await examController.DeleteAsync(Clicked_ExamId);
-                txtE_Name.Clear();
-                Clicked_ExamId = -1; 
-                await LoadExams();
-                
+                MessageBox.Show("Please select an exam to delete.");
+                return;
             }
+
+           examController.DeleteExam(Exam_id);
+           LoadExam();
         }
 
-        private void Exam_DGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Exam_DGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
-            {
-                var row = Exam_DGV.Rows[e.RowIndex];
-                Clicked_ExamId = Convert.ToInt32(row.Cells["ExamId"].Value);
-                txtE_Name.Text = row.Cells["ExamName"].Value.ToString();
-                cmb_sub.SelectedValue = row.Cells["SubjectId"].Value;
-            }
+            if (e.RowIndex < 0) return;
+
+            var row = Exam_DGV.Rows[e.RowIndex];
+            if (row.Cells["ExamId"].Value == null || row.Cells["SubjectId"].Value == null)
+                return;
+
+            Exam_id = Convert.ToInt32(row.Cells["ExamId"].Value);
+            txtE_Name.Text = row.Cells["ExamName"].Value?.ToString() ?? "";
+            comboBox_Subject.SelectedValue = Convert.ToInt32(row.Cells["SubjectId"].Value);
+        }
+
+        private void ClearForm()
+        {
+            txtE_Name.Clear();
+            comboBox_Subject.SelectedIndex = -1;
+            Exam_id = -1;
         }
     }
 }
+

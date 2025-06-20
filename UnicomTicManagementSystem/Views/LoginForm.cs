@@ -50,7 +50,7 @@ namespace UnicomTicManagementSystem.Views
 
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("Please enter all.", "Validate Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter all.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -66,6 +66,16 @@ namespace UnicomTicManagementSystem.Views
                     isValid = true;
                     break;
                 }
+            }
+
+            if (isValid)
+            {
+                MessageBox.Show($"Login successfull as {role}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            else
+            {
+                MessageBox.Show($"Invalid credentials. Please try again", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

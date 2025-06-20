@@ -86,6 +86,7 @@
             this.btn_Add.TabIndex = 4;
             this.btn_Add.Text = "Add";
             this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // btn_Update
             // 
@@ -95,6 +96,7 @@
             this.btn_Update.TabIndex = 5;
             this.btn_Update.Text = "Update";
             this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Delete
             // 
@@ -104,6 +106,7 @@
             this.btn_Delete.TabIndex = 6;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // Mark_DGV
             // 
@@ -112,6 +115,7 @@
             this.Mark_DGV.Name = "Mark_DGV";
             this.Mark_DGV.Size = new System.Drawing.Size(523, 210);
             this.Mark_DGV.TabIndex = 7;
+            this.Mark_DGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Mark_DGV_CellContentClick);
             // 
             // combo_Exam
             // 
@@ -154,6 +158,7 @@
             this.Controls.Add(this.lbl_Student);
             this.Name = "MarkForm";
             this.Text = "MarkForm";
+            this.Load += new System.EventHandler(this.MarkForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Mark_DGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

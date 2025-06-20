@@ -46,7 +46,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(109, 122);
+            this.lblAddress.Location = new System.Drawing.Point(259, 129);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(45, 13);
             this.lblAddress.TabIndex = 0;
@@ -55,7 +55,7 @@
             // lblF_Name
             // 
             this.lblF_Name.AutoSize = true;
-            this.lblF_Name.Location = new System.Drawing.Point(109, 55);
+            this.lblF_Name.Location = new System.Drawing.Point(259, 62);
             this.lblF_Name.Name = "lblF_Name";
             this.lblF_Name.Size = new System.Drawing.Size(60, 13);
             this.lblF_Name.TabIndex = 0;
@@ -65,7 +65,7 @@
             // lblStream
             // 
             this.lblStream.AutoSize = true;
-            this.lblStream.Location = new System.Drawing.Point(109, 157);
+            this.lblStream.Location = new System.Drawing.Point(259, 165);
             this.lblStream.Name = "lblStream";
             this.lblStream.Size = new System.Drawing.Size(40, 13);
             this.lblStream.TabIndex = 0;
@@ -74,7 +74,7 @@
             // lblL_Name
             // 
             this.lblL_Name.AutoSize = true;
-            this.lblL_Name.Location = new System.Drawing.Point(108, 91);
+            this.lblL_Name.Location = new System.Drawing.Point(259, 95);
             this.lblL_Name.Name = "lblL_Name";
             this.lblL_Name.Size = new System.Drawing.Size(61, 13);
             this.lblL_Name.TabIndex = 0;
@@ -82,7 +82,7 @@
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(112, 187);
+            this.btn_Add.Location = new System.Drawing.Point(274, 196);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 23);
             this.btn_Add.TabIndex = 1;
@@ -92,7 +92,7 @@
             // 
             // btn_Update
             // 
-            this.btn_Update.Location = new System.Drawing.Point(216, 187);
+            this.btn_Update.Location = new System.Drawing.Point(404, 196);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(75, 23);
             this.btn_Update.TabIndex = 2;
@@ -102,7 +102,7 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(313, 187);
+            this.btn_Delete.Location = new System.Drawing.Point(536, 196);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(75, 23);
             this.btn_Delete.TabIndex = 3;
@@ -111,23 +111,23 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(199, 52);
+            this.textBox3.Location = new System.Drawing.Point(392, 55);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(177, 20);
+            this.textBox3.Size = new System.Drawing.Size(219, 20);
             this.textBox3.TabIndex = 6;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(199, 84);
+            this.textBox1.Location = new System.Drawing.Point(392, 88);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 20);
+            this.textBox1.Size = new System.Drawing.Size(219, 20);
             this.textBox1.TabIndex = 6;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(199, 123);
+            this.textBox2.Location = new System.Drawing.Point(392, 122);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(177, 20);
+            this.textBox2.Size = new System.Drawing.Size(219, 20);
             this.textBox2.TabIndex = 6;
             // 
             // comboBox1
@@ -137,9 +137,9 @@
             "BSc in Computer Science",
             "BSc in Informtion Technology",
             "BSc  in Software Engineering"});
-            this.comboBox1.Location = new System.Drawing.Point(199, 149);
+            this.comboBox1.Location = new System.Drawing.Point(392, 157);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(177, 21);
+            this.comboBox1.Size = new System.Drawing.Size(219, 21);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -148,7 +148,7 @@
             this.Student_DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Student_DGV.Location = new System.Drawing.Point(111, 234);
             this.Student_DGV.Name = "Student_DGV";
-            this.Student_DGV.Size = new System.Drawing.Size(277, 187);
+            this.Student_DGV.Size = new System.Drawing.Size(567, 187);
             this.Student_DGV.TabIndex = 8;
             this.Student_DGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Student_DGV_CellContentClick);
             // 

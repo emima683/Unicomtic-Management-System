@@ -37,6 +37,7 @@ namespace UnicomTicManagementSystem.Controllers
         }
 
 
+
         public List<Student> show_Output()
         {
             List<Student> students = new List<Student>();

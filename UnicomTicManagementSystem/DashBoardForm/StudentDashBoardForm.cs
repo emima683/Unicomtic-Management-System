@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UnicomTicManagementSystem.Views
+namespace UnicomTicManagementSystem.DashBoardForm
 {
-    public partial class Form1 : Form
+    public partial class StudentDashBoardForm : Form
     {
-        public Form1()
+        public StudentDashBoardForm()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

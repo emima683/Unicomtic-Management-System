@@ -20,7 +20,7 @@ namespace UnicomTicManagementSystem
             migration.Create_Table();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StudentForm());
+            Application.Run(new LoginForm());
         }
     }
 }
