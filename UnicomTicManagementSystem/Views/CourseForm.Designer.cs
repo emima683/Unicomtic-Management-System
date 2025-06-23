@@ -31,7 +31,6 @@
             this.lbl_CourseName = new System.Windows.Forms.Label();
             this.lbl_Start = new System.Windows.Forms.Label();
             this.lbl_End = new System.Windows.Forms.Label();
-            this.txt_Course = new System.Windows.Forms.TextBox();
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
@@ -39,6 +38,7 @@
             this.lbl_CForm = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.combo_Course = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Course_DGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,14 +68,6 @@
             this.lbl_End.Size = new System.Drawing.Size(52, 13);
             this.lbl_End.TabIndex = 2;
             this.lbl_End.Text = "End Date";
-            // 
-            // txt_Course
-            // 
-            this.txt_Course.Location = new System.Drawing.Point(162, 49);
-            this.txt_Course.Name = "txt_Course";
-            this.txt_Course.Size = new System.Drawing.Size(190, 20);
-            this.txt_Course.TabIndex = 3;
-            this.txt_Course.TextChanged += new System.EventHandler(this.txt_Course_TextChanged);
             // 
             // btn_Add
             // 
@@ -140,11 +132,24 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 12;
             // 
+            // combo_Course
+            // 
+            this.combo_Course.FormattingEnabled = true;
+            this.combo_Course.Items.AddRange(new object[] {
+            "FullStock in Engineering",
+            "BSc in Cyber Security",
+            "BSc in Machine Language"});
+            this.combo_Course.Location = new System.Drawing.Point(162, 49);
+            this.combo_Course.Name = "combo_Course";
+            this.combo_Course.Size = new System.Drawing.Size(200, 21);
+            this.combo_Course.TabIndex = 13;
+            // 
             // CourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.combo_Course);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lbl_CForm);
@@ -152,7 +157,6 @@
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.btn_Add);
-            this.Controls.Add(this.txt_Course);
             this.Controls.Add(this.lbl_End);
             this.Controls.Add(this.lbl_Start);
             this.Controls.Add(this.lbl_CourseName);
@@ -171,7 +175,6 @@
         private System.Windows.Forms.Label lbl_CourseName;
         private System.Windows.Forms.Label lbl_Start;
         private System.Windows.Forms.Label lbl_End;
-        private System.Windows.Forms.TextBox txt_Course;
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_Delete;
@@ -179,5 +182,6 @@
         private System.Windows.Forms.Label lbl_CForm;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ComboBox combo_Course;
     }
 }

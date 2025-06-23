@@ -11,7 +11,7 @@ namespace UnicomTicManagementSystem.Controllers
 {
     internal class TimetableController
     {
-        public List<Timetable> show_Output()
+        public List<Timetable> GetAllTimetables()
         {
             List<Timetable> timetable = new List<Timetable>();
             using (var conn = DBConfig.GetConnection())
@@ -36,7 +36,7 @@ namespace UnicomTicManagementSystem.Controllers
                         }
                     }
                 }
-                return timetable;
+                return null;
             }
         }
 

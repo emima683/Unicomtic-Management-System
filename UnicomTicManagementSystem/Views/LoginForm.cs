@@ -71,6 +71,13 @@ namespace UnicomTicManagementSystem.Views
             if (isValid)
             {
                 MessageBox.Show($"Login successfull as {role}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+
+                
+
+                this.Hide();
+
             }
 
             else

@@ -31,25 +31,25 @@ namespace UnicomTicManagementSystem.Views
             
         }
 
-        private async Task LoadStudents()
+        private void LoadStudents()
         {
-            var student = await studentController.GetStudentsAsync();
+            var student = studentController.show_Output();
             combo_Student.DataSource = student;
             combo_Student.DisplayMember = "StudentName";
             combo_Student.ValueMember = "StudentId";
         }
 
-        private async Task LoadExams()
+        private void LoadExams()
         {
-            var exam = await examController.GetExamsAsync();
+            var exam =examController.GetAllExam();
             combo_Exam.DataSource = exam;
             combo_Exam.DisplayMember = "ExamName";
             combo_Exam.ValueMember = "ExamId";
         }
 
-        private async Task LoadMark()
+        private void LoadMark()
         {
-            Mark_DGV.DataSource = await markController.GetMarksAsync();
+            Mark_DGV.DataSource = markController.GetAllMarks();
         }
 
         private async void btn_Add_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace UnicomTicManagementSystem.Views
             int examId = Convert.ToInt32(combo_Exam.SelectedValue);
             int score = Convert.ToInt32(txt_Score.Text);
 
-            await markController.AddAsync(new Mark
+            markController.Add(new Mark
             {
                 StudentId = studentId,
                 ExamId = examId,
@@ -66,14 +66,14 @@ namespace UnicomTicManagementSystem.Views
             });
 
             txt_Score.Clear();
-            await LoadMark();
+             LoadMark();
         }
 
         private async void btn_Update_Click(object sender, EventArgs e)
         {
             if (Clicked_MarkId != -1)
             {
-                await markController.UpdateAsync(new Mark
+                 markController.Update(new Mark
                 {
                     MarkId = Clicked_MarkId,
                     StudentId = Convert.ToInt32(combo_Student.SelectedValue),
@@ -83,18 +83,18 @@ namespace UnicomTicManagementSystem.Views
 
                 txt_Score.Clear();
                 Clicked_MarkId = -1;
-                await LoadMark();
+                 LoadMark();
             }
         }
 
-        private async void btn_Delete_Click(object sender, EventArgs e)
+        private  void btn_Delete_Click(object sender, EventArgs e)
         {
             if (Clicked_MarkId != -1)
             {
-                await markController.DeleteAsync(Clicked_MarkId);
+                 markController.Delete(Clicked_MarkId);
                 txt_Score.Clear();
                 Clicked_MarkId = -1;
-                await LoadMark();
+                LoadMark();
                 
             };
         }

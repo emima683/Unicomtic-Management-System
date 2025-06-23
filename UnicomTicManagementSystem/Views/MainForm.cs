@@ -30,8 +30,7 @@ namespace UnicomTicManagementSystem.Views
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
-            loadFornInPanel(loginForm);
+           this .Close();
         }
 
         private void btn_Student_Click(object sender, EventArgs e)
@@ -67,6 +66,25 @@ namespace UnicomTicManagementSystem.Views
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btn_Room_Click(object sender, EventArgs e)
+        {
+            RoomForm roomForm = new RoomForm(); 
+            loadFornInPanel(roomForm);  
+        }
+
+       // private void btn_Subject_Click(object sender, EventArgs e)
+        private void btn_Subject_Click_1(object sender, EventArgs e)
+        {
+          SubjectForm subjectForm = new SubjectForm();  
+            loadFornInPanel(subjectForm);
+        }
+
+        private void btn_lecture_Click(object sender, EventArgs e)
+        {
+            LectureForm lectureForm = new LectureForm();
+            loadFornInPanel(lectureForm);
         }
     }
 

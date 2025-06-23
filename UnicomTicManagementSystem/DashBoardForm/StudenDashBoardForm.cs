@@ -11,9 +11,9 @@ using UnicomTicManagementSystem.Views;
 
 namespace UnicomTicManagementSystem.DashBoardForm
 {
-    public partial class LectureDashBoardForm : Form
+    public partial class StudenDashBoardForm : Form
     {
-        public LectureDashBoardForm()
+        public StudenDashBoardForm()
         {
             InitializeComponent();
         }
@@ -28,24 +28,19 @@ namespace UnicomTicManagementSystem.DashBoardForm
             childForm.Show();
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        private void btn_mark_Click(object sender, EventArgs e)
         {
-
+            MarkForm markForm = new MarkForm();
+            loadFormInPanel(markForm);
         }
 
-        private void btnV_Course_Click(object sender, EventArgs e)
-        {
-            CourseForm courseForm = new CourseForm();
-            loadFormInPanel(courseForm);
-        }
-
-        private void btnV_Timetable_Click(object sender, EventArgs e)
+        private void btn_timetable_Click(object sender, EventArgs e)
         {
             TimetableForm timetableForm = new TimetableForm();
             loadFormInPanel(timetableForm);
         }
 
-        private void btn_Logout_Click(object sender, EventArgs e)
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
             this.Close();
         }

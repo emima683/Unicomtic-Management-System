@@ -32,16 +32,28 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_Room = new System.Windows.Forms.Button();
-            this.btn_Login = new System.Windows.Forms.Button();
             this.btn_Student = new System.Windows.Forms.Button();
             this.btn_Course = new System.Windows.Forms.Button();
             this.btn_Exam = new System.Windows.Forms.Button();
             this.btn_Mark = new System.Windows.Forms.Button();
             this.btn_Timetable = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             btn_Subject = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btn_Subject
+            // 
+            btn_Subject.FlatAppearance.BorderSize = 0;
+            btn_Subject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_Subject.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btn_Subject.Location = new System.Drawing.Point(52, 306);
+            btn_Subject.Name = "btn_Subject";
+            btn_Subject.Size = new System.Drawing.Size(95, 23);
+            btn_Subject.TabIndex = 9;
+            btn_Subject.Text = "Subject Form";
+            btn_Subject.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -56,9 +68,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(btn_Subject);
             this.panel2.Controls.Add(this.btn_Room);
-            this.panel2.Controls.Add(this.btn_Login);
             this.panel2.Controls.Add(this.btn_Student);
             this.panel2.Controls.Add(this.btn_Course);
             this.panel2.Controls.Add(this.btn_Exam);
@@ -69,18 +81,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(188, 419);
             this.panel2.TabIndex = 2;
-            // 
-            // btn_Subject
-            // 
-            btn_Subject.FlatAppearance.BorderSize = 0;
-            btn_Subject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_Subject.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btn_Subject.Location = new System.Drawing.Point(52, 306);
-            btn_Subject.Name = "btn_Subject";
-            btn_Subject.Size = new System.Drawing.Size(95, 23);
-            btn_Subject.TabIndex = 9;
-            btn_Subject.Text = "Subject Form";
-            btn_Subject.UseVisualStyleBackColor = true;
             // 
             // btn_Room
             // 
@@ -93,19 +93,6 @@
             this.btn_Room.TabIndex = 8;
             this.btn_Room.Text = "Room Form";
             this.btn_Room.UseVisualStyleBackColor = true;
-            // 
-            // btn_Login
-            // 
-            this.btn_Login.FlatAppearance.BorderSize = 0;
-            this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Login.ForeColor = System.Drawing.Color.Black;
-            this.btn_Login.Location = new System.Drawing.Point(49, 23);
-            this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(98, 23);
-            this.btn_Login.TabIndex = 2;
-            this.btn_Login.Text = "Login Form";
-            this.btn_Login.UseVisualStyleBackColor = true;
             // 
             // btn_Student
             // 
@@ -176,6 +163,18 @@
             this.panel3.Size = new System.Drawing.Size(612, 419);
             this.panel3.TabIndex = 3;
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(63, 32);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Lecture";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // AdminDashBoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,12 +195,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_Room;
-        private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.Button btn_Student;
         private System.Windows.Forms.Button btn_Course;
         private System.Windows.Forms.Button btn_Exam;
         private System.Windows.Forms.Button btn_Mark;
         private System.Windows.Forms.Button btn_Timetable;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button1;
     }
 }

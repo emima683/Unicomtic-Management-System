@@ -11,7 +11,7 @@ namespace UnicomTicManagementSystem.Controller.cs
 {
     internal class MarkController
     {
-        public async Task<List<Mark>> GetAllMarksAsync()
+        public  Task<List<Mark>> GetAllMarks()
         {
             List<Mark> mark = new List<Mark>();
             using (var conn = DBConfig.GetConnection())
@@ -23,7 +23,7 @@ namespace UnicomTicManagementSystem.Controller.cs
                     using (SQLiteDataReader reader = cmd.ExecuteReader())
 
                     {
-                        while (await reader.ReadAsync())
+                        while  (reader.Read())
                         {
                             mark.Add(new Mark
                             {
@@ -39,11 +39,11 @@ namespace UnicomTicManagementSystem.Controller.cs
                 }
             }
 
-            return mark;
+            return null;
         }
 
 
-        public async Task AddAsync(Mark mark)
+        public void Add(Mark mark)
         {
             using (var conn = DBConfig.GetConnection())
             {
@@ -56,13 +56,13 @@ namespace UnicomTicManagementSystem.Controller.cs
                         cmd.Parameters.AddWithValue("@studentId", mark.StudentId);
                         cmd.Parameters.AddWithValue("@examId", mark.ExamId);
                         cmd.Parameters.AddWithValue("@score", mark.Score);
-                        await cmd.ExecuteNonQueryAsync();
+                        cmd.ExecuteNonQueryAsync();
                     }
                 }
             }
         }
 
-        public async Task UpdateAsync(Mark mark)
+        public void Update(Mark mark)
         {
             using (var conn = DBConfig.GetConnection())
             {
@@ -75,14 +75,14 @@ namespace UnicomTicManagementSystem.Controller.cs
                         cmd.Parameters.AddWithValue("@studentId", mark.StudentId);
                         cmd.Parameters.AddWithValue("@examId", mark.ExamId);
                         cmd.Parameters.AddWithValue("@score", mark.Score);
-                        await cmd.ExecuteNonQueryAsync();
+                        cmd.ExecuteNonQueryAsync();
                     }
                 }
             }
         }
 
 
-        public async Task DeleteAsync(int markid)
+        public void Delete(int markid)
         {
             using (var conn = DBConfig.GetConnection())
             {
@@ -90,8 +90,9 @@ namespace UnicomTicManagementSystem.Controller.cs
                 {
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     
-                        {cmd.Parameters.AddWithValue("@id", markid);
-                        await cmd.ExecuteNonQueryAsync();
+                    {
+                        cmd.Parameters.AddWithValue("@id", markid);
+                        cmd.ExecuteNonQueryAsync();
                     }
                 }
 

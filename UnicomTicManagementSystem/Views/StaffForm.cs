@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UnicomTicManagementSystem.DashBoardForm
+namespace UnicomTicManagementSystem.Views
 {
-    public partial class StudentDashBoardForm : Form
+    public partial class StaffForm : Form
     {
-        public StudentDashBoardForm()
+        public StaffForm()
         {
             InitializeComponent();
         }

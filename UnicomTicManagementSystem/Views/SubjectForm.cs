@@ -67,7 +67,7 @@ namespace UnicomTicManagementSystem.Views
                 return;
             }
 
-            // Fix missing closing parenthesis here and also fix the check to use textBox1 and comboBox1
+            
             if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(combo_course.Text))
             {
                 MessageBox.Show("Please enter the SubjectName and Course.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -79,11 +79,11 @@ namespace UnicomTicManagementSystem.Views
             Subject subject = new Subject
             {
                 SubjectName = textBox1.Text,
-                Course = combo_course.TabIndex, // Again, convert to int if needed
+                Course = combo_course.TabIndex, 
                 Id = sub_id
             };
 
-            subjectController.UpdateSubject(subject); // fixed variable name (was updatedSubject)
+            subjectController.UpdateSubject(subject); 
             get_Subject_info();
             Clear_Inputs();
 

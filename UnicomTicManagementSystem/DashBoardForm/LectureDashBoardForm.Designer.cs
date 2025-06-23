@@ -30,10 +30,10 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnV_Course = new System.Windows.Forms.Button();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.btnV_Timetable = new System.Windows.Forms.Button();
+            this.btnV_Course = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,14 +59,31 @@
             this.panel2.Size = new System.Drawing.Size(178, 419);
             this.panel2.TabIndex = 1;
             // 
-            // panel3
+            // btn_Logout
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(178, 31);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(622, 419);
-            this.panel3.TabIndex = 2;
+            this.btn_Logout.FlatAppearance.BorderSize = 0;
+            this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Logout.Location = new System.Drawing.Point(49, 195);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(74, 48);
+            this.btn_Logout.TabIndex = 1;
+            this.btn_Logout.Text = "Logout";
+            this.btn_Logout.UseVisualStyleBackColor = true;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
+            // 
+            // btnV_Timetable
+            // 
+            this.btnV_Timetable.FlatAppearance.BorderSize = 0;
+            this.btnV_Timetable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnV_Timetable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnV_Timetable.Location = new System.Drawing.Point(22, 126);
+            this.btnV_Timetable.Name = "btnV_Timetable";
+            this.btnV_Timetable.Size = new System.Drawing.Size(134, 50);
+            this.btnV_Timetable.TabIndex = 2;
+            this.btnV_Timetable.Text = "View Timetable";
+            this.btnV_Timetable.UseVisualStyleBackColor = true;
+            this.btnV_Timetable.Click += new System.EventHandler(this.btnV_Timetable_Click);
             // 
             // btnV_Course
             // 
@@ -80,30 +97,17 @@
             this.btnV_Course.TabIndex = 0;
             this.btnV_Course.Text = "View Course";
             this.btnV_Course.UseVisualStyleBackColor = true;
+            this.btnV_Course.Click += new System.EventHandler(this.btnV_Course_Click);
             // 
-            // btn_Logout
+            // panel3
             // 
-            this.btn_Logout.FlatAppearance.BorderSize = 0;
-            this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Logout.Location = new System.Drawing.Point(49, 195);
-            this.btn_Logout.Name = "btn_Logout";
-            this.btn_Logout.Size = new System.Drawing.Size(74, 48);
-            this.btn_Logout.TabIndex = 1;
-            this.btn_Logout.Text = "Logout";
-            this.btn_Logout.UseVisualStyleBackColor = true;
-            // 
-            // btnV_Timetable
-            // 
-            this.btnV_Timetable.FlatAppearance.BorderSize = 0;
-            this.btnV_Timetable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnV_Timetable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnV_Timetable.Location = new System.Drawing.Point(22, 126);
-            this.btnV_Timetable.Name = "btnV_Timetable";
-            this.btnV_Timetable.Size = new System.Drawing.Size(134, 50);
-            this.btnV_Timetable.TabIndex = 2;
-            this.btnV_Timetable.Text = "View Timetable";
-            this.btnV_Timetable.UseVisualStyleBackColor = true;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(178, 31);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(622, 419);
+            this.panel3.TabIndex = 2;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // LectureDashBoardForm
             // 

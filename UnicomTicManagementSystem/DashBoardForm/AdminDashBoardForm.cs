@@ -18,7 +18,7 @@ namespace UnicomTicManagementSystem.DashBoardForm
             InitializeComponent();
         }
 
-        private void loadFornInPanel(Form childForm)
+        private void loadFormInPanel(Form childForm)
         {
             panel3.Controls.Clear();
             childForm.TopLevel = false;
@@ -31,37 +31,37 @@ namespace UnicomTicManagementSystem.DashBoardForm
         private void btn_Login_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
-            loadFornInPanel(loginForm);
+            loadFormInPanel(loginForm);
         }
 
         private void btn_Student_Click(object sender, EventArgs e)
         {
             StudentForm studentForm = new StudentForm();
-            loadFornInPanel(studentForm);
+            loadFormInPanel(studentForm);
         }
 
         private void btn_Course_Click(object sender, EventArgs e)
         {
             CourseForm courseForm = new CourseForm();
-            loadFornInPanel(courseForm);
+            loadFormInPanel(courseForm);
         }
 
         private void btn_Exam_Click(object sender, EventArgs e)
         {
             ExamForm examForm = new ExamForm();
-            loadFornInPanel(examForm);
+            loadFormInPanel(examForm);
         }
 
         private void btn_Mark_Click(object sender, EventArgs e)
         {
             MarkForm markForm = new MarkForm();
-            loadFornInPanel(markForm);
+            loadFormInPanel(markForm);
         }
 
         private void btn_Timetable_Click(object sender, EventArgs e)
         {
             TimetableForm timetableForm = new TimetableForm();
-            loadFornInPanel(timetableForm);
+            loadFormInPanel(timetableForm);
         }
     }
 }

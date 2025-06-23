@@ -28,7 +28,7 @@ namespace UnicomTicManagementSystem.Views
             {
                 DataGridViewRow row = Course_DGV.Rows[e.RowIndex];
                 course_Id = Convert.ToInt32(row.Cells["Course_Id"].Value);
-                txt_Course.Text = row.Cells["CourseName"].Value.ToString();
+                combo_Course.Text = row.Cells["CourseName"].Value.ToString();
                 await LoadCourses();
             }
         }
@@ -40,10 +40,12 @@ namespace UnicomTicManagementSystem.Views
                 courseController.UpdateAsync(new Course
                 {
                     Id = course_Id,
-                    CourseName = txt_Course.Text.Trim(),
+                    CourseName = combo_Course.Text,
+                    StartDate = dateTimePicker1.Value,
+                    EndDate = dateTimePicker2.Value,
                 });
 
-                txt_Course.Clear();
+                combo_Course.SelectedIndex = 0;
                 course_Id = -1;
                 await LoadCourses();
             }
@@ -51,7 +53,7 @@ namespace UnicomTicManagementSystem.Views
 
         private async void btn_Add_Click(object sender, EventArgs e)
         {
-            string name = txt_Course.Text;
+            string name = combo_Course.Text;
             DateTime Startdate = dateTimePicker1.Value;
             DateTime Enddate = dateTimePicker1.Value;
 
@@ -59,13 +61,14 @@ namespace UnicomTicManagementSystem.Views
             {
                 courseController.AddAsync(new Course
                 {
-                    CourseName = name,
-                    StartDate = Startdate,
-                    EndDate = Enddate,  
+                    Id = course_Id,
+                    CourseName = combo_Course.Text,
+                    StartDate = dateTimePicker1. Value ,
+                    EndDate = dateTimePicker2. Value ,
 
                 });
 
-                txt_Course.Clear();
+                combo_Course.SelectedIndex = 0;
                 await LoadCourses();
             }
             else
@@ -81,7 +84,7 @@ namespace UnicomTicManagementSystem.Views
             {
                 
                 courseController.DeleteAsync(course_Id );
-                txt_Course.Clear();
+                combo_Course.SelectedIndex = 0;
                 course_Id = -1;
                 
                 

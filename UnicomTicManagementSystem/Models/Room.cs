@@ -8,5 +8,9 @@ namespace UnicomTicManagementSystem.Models
 {
     internal class Room
     {
+        public int Id { get; set; }
+        public string RoomName { get; set; }
+        public string RoomType { get; set; }
+
     }
 }

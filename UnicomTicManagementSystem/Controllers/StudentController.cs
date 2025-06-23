@@ -70,7 +70,7 @@ namespace UnicomTicManagementSystem.Controllers
                 return students;
             }
         }
-
+       
 
         public Student Get_student_id(int id)
         {

@@ -32,13 +32,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_Room = new System.Windows.Forms.Button();
-            this.btn_Login = new System.Windows.Forms.Button();
             this.btn_Student = new System.Windows.Forms.Button();
             this.btn_Course = new System.Windows.Forms.Button();
             this.btn_Exam = new System.Windows.Forms.Button();
             this.btn_Mark = new System.Windows.Forms.Button();
             this.btn_Timetable = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_lecture = new System.Windows.Forms.Button();
             btn_Subject = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,7 @@
             btn_Subject.TabIndex = 9;
             btn_Subject.Text = "Subject Form";
             btn_Subject.UseVisualStyleBackColor = true;
+            btn_Subject.Click += new System.EventHandler(this.btn_Subject_Click_1);
             // 
             // panel1
             // 
@@ -68,9 +69,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.btn_lecture);
             this.panel2.Controls.Add(btn_Subject);
             this.panel2.Controls.Add(this.btn_Room);
-            this.panel2.Controls.Add(this.btn_Login);
             this.panel2.Controls.Add(this.btn_Student);
             this.panel2.Controls.Add(this.btn_Course);
             this.panel2.Controls.Add(this.btn_Exam);
@@ -93,20 +94,7 @@
             this.btn_Room.TabIndex = 8;
             this.btn_Room.Text = "Room Form";
             this.btn_Room.UseVisualStyleBackColor = true;
-            // 
-            // btn_Login
-            // 
-            this.btn_Login.FlatAppearance.BorderSize = 0;
-            this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Login.ForeColor = System.Drawing.Color.Black;
-            this.btn_Login.Location = new System.Drawing.Point(49, 23);
-            this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(98, 23);
-            this.btn_Login.TabIndex = 2;
-            this.btn_Login.Text = "Login Form";
-            this.btn_Login.UseVisualStyleBackColor = true;
-            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
+            this.btn_Room.Click += new System.EventHandler(this.btn_Room_Click);
             // 
             // btn_Student
             // 
@@ -183,6 +171,19 @@
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // btn_lecture
+            // 
+            this.btn_lecture.FlatAppearance.BorderSize = 0;
+            this.btn_lecture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_lecture.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lecture.Location = new System.Drawing.Point(63, 20);
+            this.btn_lecture.Name = "btn_lecture";
+            this.btn_lecture.Size = new System.Drawing.Size(75, 23);
+            this.btn_lecture.TabIndex = 2;
+            this.btn_lecture.Text = "Lecture";
+            this.btn_lecture.UseVisualStyleBackColor = true;
+            this.btn_lecture.Click += new System.EventHandler(this.btn_lecture_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,7 +206,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.Button btn_Student;
         private System.Windows.Forms.Button btn_Course;
         private System.Windows.Forms.Button btn_Exam;
@@ -213,5 +213,6 @@
         private System.Windows.Forms.Button btn_Timetable;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_Room;
+        private System.Windows.Forms.Button btn_lecture;
     }
 }
