@@ -81,3 +81,4 @@ Z:\New folder (2)\Unicomtic-Management-System\UnicomTicManagementSystem\bin\Debu
 Z:\New folder (2)\Unicomtic-Management-System\UnicomTicManagementSystem\bin\Debug\System.Data.SQLite.xml
 Z:\New folder (2)\Unicomtic-Management-System\UnicomTicManagementSystem\obj\Debug\UnicomTi.5B6226AA.Up2Date
 Z:\New folder (2)\Unicomtic-Management-System\UnicomTicManagementSystem\obj\Debug\UnicomTicManagementSystem.Views.LectureForm.resources
+Z:\New folder (2)\Unicomtic-Management-System\UnicomTicManagementSystem\obj\Debug\UnicomTicManagementSystem.DashBoardForm.StudentDashBoardForm.resources

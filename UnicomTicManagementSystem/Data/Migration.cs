@@ -25,7 +25,7 @@ namespace UnicomTicManagementSystem.Data
 
                                 CREATE TABLE IF NOT EXISTS Timetable (TimetableID INTEGER PRIMARY KEY AUTOINCREMENT, TimeSlot TEXT NOT NULL, SubjectID INTEGER NOT  NULL, RoomID INTEGER NOT NULL, FOREIGN KEY(SubjectId) REFERENCES Subject(SubjectId), FOREIGN KEY(RoomId) REFERENCES Exam(RoomId));
 
-                                CREATE TABLE IF NOT EXISTS Course (CourseID INTEGER PRIMARY KEY AUTOINCREMENT, CourseName TEXT NOT NULL, Start DATE NOT NULL);
+                                CREATE TABLE IF NOT EXISTS Course (CourseID INTEGER PRIMARY KEY AUTOINCREMENT, CourseName TEXT NOT NULL, Start DATE NOT NULL, End DATE NOT NULL);
 
                                 CREATE TABLE IF NOT EXISTS Exams (ExamID INTEGER PRIMARY KEY AUTOINCREMENT, ExamName TEXT NOT NULL, SubjectId INTEGER, FOREIGN KEY(SubjectId) REFERENCES Subject(SubjectId));
 

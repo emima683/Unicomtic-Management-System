@@ -78,6 +78,12 @@
     <Compile Include="DashBoardForm\StaffDashBoardForm.Designer.cs">
       <DependentUpon>StaffDashBoardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashBoardForm\StudentDashBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoardForm\StudentDashBoardForm.Designer.cs">
+      <DependentUpon>StudentDashBoardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\DBConfig.cs" />
     <Compile Include="Data\Migration.cs" />
     <Compile Include="Models\Course.cs" />
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoardForm\StaffDashBoardForm.resx">
       <DependentUpon>StaffDashBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoardForm\StudentDashBoardForm.resx">
+      <DependentUpon>StudentDashBoardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

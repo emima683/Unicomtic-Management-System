@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UnicomTicManagementSystem.DashBoardForm;
 using UnicomTicManagementSystem.Data;
 using UnicomTicManagementSystem.Views;
 
@@ -20,7 +21,7 @@ namespace UnicomTicManagementSystem
             migration.Create_Table();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new MarkForm());
            
         }
     }

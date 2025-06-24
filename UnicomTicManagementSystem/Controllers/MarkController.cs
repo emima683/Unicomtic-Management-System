@@ -51,12 +51,12 @@ namespace UnicomTicManagementSystem.Controller.cs
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
-                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                   // using (SQLiteDataReader reader = cmd.ExecuteReader())
                     {
                         cmd.Parameters.AddWithValue("@studentId", mark.StudentId);
                         cmd.Parameters.AddWithValue("@examId", mark.ExamId);
                         cmd.Parameters.AddWithValue("@score", mark.Score);
-                        cmd.ExecuteNonQueryAsync();
+                        cmd.ExecuteNonQuery();
                     }
                 }
             }
@@ -75,7 +75,8 @@ namespace UnicomTicManagementSystem.Controller.cs
                         cmd.Parameters.AddWithValue("@studentId", mark.StudentId);
                         cmd.Parameters.AddWithValue("@examId", mark.ExamId);
                         cmd.Parameters.AddWithValue("@score", mark.Score);
-                        cmd.ExecuteNonQueryAsync();
+                        cmd.Parameters.AddWithValue("@id", mark.MarkId);
+                        cmd.ExecuteNonQuery();
                     }
                 }
             }
@@ -86,13 +87,13 @@ namespace UnicomTicManagementSystem.Controller.cs
         {
             using (var conn = DBConfig.GetConnection())
             {
-                string query = "DELETE Mark";
+                string query = "DELETE FROM Mark WHERE MarkId=@id;";
                 {
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     
                     {
                         cmd.Parameters.AddWithValue("@id", markid);
-                        cmd.ExecuteNonQueryAsync();
+                        cmd.ExecuteNonQuery();
                     }
                 }
 

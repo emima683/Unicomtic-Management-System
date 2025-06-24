@@ -28,7 +28,8 @@ namespace UnicomTicManagementSystem.Views
 
         private void MarkForm_Load(object sender, EventArgs e)
         {
-            
+            LoadExams();
+            LoadMark();
         }
 
         private void LoadStudents()
@@ -52,7 +53,7 @@ namespace UnicomTicManagementSystem.Views
             Mark_DGV.DataSource = markController.GetAllMarks();
         }
 
-        private async void btn_Add_Click(object sender, EventArgs e)
+        private  void btn_Add_Click(object sender, EventArgs e)
         {
             int studentId = Convert.ToInt32(combo_Student.SelectedValue);
             int examId = Convert.ToInt32(combo_Exam.SelectedValue);
@@ -65,24 +66,24 @@ namespace UnicomTicManagementSystem.Views
                 Score = score
             });
 
-            txt_Score.Clear();
+             txt_Score.Clear();
              LoadMark();
         }
 
-        private async void btn_Update_Click(object sender, EventArgs e)
+        private  void btn_Update_Click(object sender, EventArgs e)
         {
             if (Clicked_MarkId != -1)
             {
                  markController.Update(new Mark
-                {
+                 {
                     MarkId = Clicked_MarkId,
                     StudentId = Convert.ToInt32(combo_Student.SelectedValue),
                     ExamId = Convert.ToInt32(combo_Exam.SelectedValue),
                     Score = Convert.ToInt32(txt_Score.Text),
-                });
+                 });
 
-                txt_Score.Clear();
-                Clicked_MarkId = -1;
+                 txt_Score.Clear();
+                 Clicked_MarkId = -1;
                  LoadMark();
             }
         }
